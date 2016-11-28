@@ -1,0 +1,53 @@
+<!DOCTYPE>
+<html ng-app="myApp">
+<head>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+
+<link rel="stylesheet" type="text/css" href="/css/index.css">
+
+
+  <title>Nancy's Home Page</title>
+</head>
+<body>
+  <div class="container" ng-controller="AppCtrl">
+    <h1>Nancy Gonzales</h1>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="jumbotron">
+          <h3>Education</h3>
+          <p class="description" id ="edu" ng-repeat="edu in mywebpage">
+            {{edu.description}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="jumbotron">
+          <h3>Projects</h3>
+          <p class="description" ng-repeat="project in mywebpage">
+            {{project.work}}
+          </p>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-md-8">
+        <div class="jumbotron">
+          <h3>Skills</h3>
+          <p ng-repeat="skills in mywebpage">
+            <span class="label label-default" ng-repeat="myskill in skills.myskills">{{myskill.skill}}&nbsp;</span>
+          </p>
+        </div>
+      </div>
+    </div>
+   </div>
+  <!-- container ends -->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="controllers/controller.js"></script>
+</body>
+</html>
